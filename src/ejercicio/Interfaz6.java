@@ -5,6 +5,8 @@
  */
 package ejercicio;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author DanielDeJesus
@@ -90,6 +92,11 @@ public class Interfaz6 extends javax.swing.JFrame {
         jPanel1.add(txtValorTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 100, -1));
 
         cmdCalcular.setText("Calcular");
+        cmdCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdCalcularActionPerformed(evt);
+            }
+        });
         jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, -1, -1));
 
         cmdBorrar.setText("Borrar");
@@ -153,6 +160,41 @@ public class Interfaz6 extends javax.swing.JFrame {
         
         txtNumeroPalabras.requestFocusInWindow();
     }//GEN-LAST:event_cmdBorrarActionPerformed
+
+    private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
+        String res;
+        double numP,tCm,numC,opP,opCm,opC,suma;
+        
+        if(txtNumeroPalabras.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(this,"Digite el Nº de palabras", "Error", JOptionPane.ERROR_MESSAGE);
+            txtNumeroPalabras.requestFocusInWindow();
+        }
+        else if(txtTamañoCm.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Digite el tamaño en centimetros", "Error", JOptionPane.ERROR_MESSAGE);
+            txtTamañoCm.requestFocusInWindow();
+        }
+        else if(txtNumeroColores.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Digite el Nº de colores", "Error", JOptionPane.ERROR_MESSAGE);
+            txtNumeroColores.requestFocusInWindow();
+        }
+        else{
+        numP = Double.parseDouble(txtNumeroPalabras.getText());
+        tCm = Double.parseDouble(txtTamañoCm.getText());
+        numC = Double.parseDouble(txtNumeroColores.getText());
+        
+        opP = numP * 20000;
+        opCm = tCm * 15000;
+        opC = numC * 25000;
+        suma= opP + opCm + opC;
+        
+        res = String.valueOf(suma);
+        txtValorTotal.setText(res);
+        
+        
+        }
+        
+        
+    }//GEN-LAST:event_cmdCalcularActionPerformed
 
     /**
      * @param args the command line arguments
