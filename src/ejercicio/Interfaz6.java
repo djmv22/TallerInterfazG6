@@ -27,21 +27,132 @@ public class Interfaz6 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txtNumeroPalabras = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtTamañoCm = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtNumeroColores = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txtValorTotal = new javax.swing.JTextField();
+        cmdCalcular = new javax.swing.JButton();
+        cmdBorrar = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 14)); // NOI18N
+        jLabel1.setText("Ejercicio Número 6: Calcular el valor por un anuncio clasificado");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        jLabel2.setText("Nº de palabras:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
+
+        txtNumeroPalabras.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNumeroPalabrasKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtNumeroPalabras, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 70, -1));
+
+        jLabel3.setText("Tamaño en centimetros:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, -1, -1));
+
+        txtTamañoCm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTamañoCmActionPerformed(evt);
+            }
+        });
+        txtTamañoCm.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTamañoCmKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtTamañoCm, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, 60, -1));
+
+        jLabel4.setText("Nº de colores:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, -1, -1));
+
+        txtNumeroColores.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNumeroColoresKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtNumeroColores, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 70, -1));
+
+        jLabel5.setText("Total a pagar por el anuncio:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, -1, -1));
+
+        txtValorTotal.setEditable(false);
+        jPanel1.add(txtValorTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 100, -1));
+
+        cmdCalcular.setText("Calcular");
+        jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, -1, -1));
+
+        cmdBorrar.setText("Borrar");
+        cmdBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdBorrarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtTamañoCmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTamañoCmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTamañoCmActionPerformed
+
+    private void txtNumeroPalabrasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumeroPalabrasKeyTyped
+        char c=evt.getKeyChar();
+        
+        if(!Character.isDigit(c)){
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtNumeroPalabrasKeyTyped
+
+    private void txtTamañoCmKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTamañoCmKeyTyped
+       char c=evt.getKeyChar();
+       
+       if(!Character.isDigit(c)){
+           getToolkit().beep();
+           evt.consume();
+       }
+    }//GEN-LAST:event_txtTamañoCmKeyTyped
+
+    private void txtNumeroColoresKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumeroColoresKeyTyped
+       char c=evt.getKeyChar();
+       
+       if(!Character.isDigit(c)){
+           getToolkit().beep();
+           evt.consume();
+       }
+    }//GEN-LAST:event_txtNumeroColoresKeyTyped
+
+    private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
+        txtNumeroPalabras.setText("");
+        txtTamañoCm.setText("");
+        txtNumeroColores.setText("");
+        txtValorTotal.setText("");
+        
+        txtNumeroPalabras.requestFocusInWindow();
+    }//GEN-LAST:event_cmdBorrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +190,17 @@ public class Interfaz6 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cmdBorrar;
+    private javax.swing.JButton cmdCalcular;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txtNumeroColores;
+    private javax.swing.JTextField txtNumeroPalabras;
+    private javax.swing.JTextField txtTamañoCm;
+    private javax.swing.JTextField txtValorTotal;
     // End of variables declaration//GEN-END:variables
 }
